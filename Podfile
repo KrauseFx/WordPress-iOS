@@ -6,8 +6,6 @@ use_frameworks!
 platform :ios, '10.0'
 workspace 'WordPress.xcworkspace'
 
-plugin 'cocoapods-repo-update'
-
 ## Pods shared between all the targets
 ## ===================================
 ##
@@ -89,13 +87,13 @@ target 'WordPress' do
     ## React Native
     ## =====================
     ##
-    gutenberg :git => 'http://github.com/wordpress-mobile/gutenberg-mobile/', :tag => 'v1.1.0'
+    gutenberg :git => 'http://github.com/wordpress-mobile/gutenberg-mobile/', :commit => 'b0172f7cefafdb03c28df2606830963e6861bded'
 
-    gutenberg_pod 'React'
-    gutenberg_pod 'yoga'
-    gutenberg_pod 'Folly'
-    gutenberg_pod 'react-native-safe-area'
-    pod 'RNSVG', :git => 'https://github.com/wordpress-mobile/react-native-svg.git', :tag => '8.0.9-gb.0'
+    gutenberg_pod 'React', 'upgrade-to-rn-059'
+    gutenberg_pod 'yoga', 'upgrade-to-rn-059'
+    gutenberg_pod 'Folly', 'upgrade-to-rn-059'
+    gutenberg_pod 'react-native-safe-area', 'upgrade-to-rn-059'
+    pod 'RNSVG', :git => 'https://github.com/wordpress-mobile/react-native-svg.git', :tag => '9.3.3-gb'
     pod 'react-native-keyboard-aware-scroll-view', :git => 'https://github.com/wordpress-mobile/react-native-keyboard-aware-scroll-view.git', :tag => 'gb-v0.8.6'
     
     ## Third party libraries
